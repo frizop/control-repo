@@ -1,5 +1,7 @@
+# stuff
 class profile::base {
-
-  #the base profile should include component modules that will be on all nodes
-
+  exec { 'test':
+    command  => '[System.Console]::Error.WriteLine("foo")',
+    provider => powershell,
+  }
 }
