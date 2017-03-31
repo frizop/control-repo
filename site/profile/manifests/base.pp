@@ -19,7 +19,7 @@ class profile::base {
     port     => '80',
     protocol => 'http',
     ssl      => false,
-    require  => Windowsfeature['$iis_features'],
+    require  => Windowsfeature['Web-Server'],
   }
 
 }
