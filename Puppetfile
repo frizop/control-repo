@@ -19,6 +19,4 @@ forge "http://forge.puppetlabs.com"
 mod 'puppetlabs-stdlib', '4.16.0'
 mod 'puppetlabs-powershell', '2.1.0'
 
-mod 'puppetlabs-iis',
-  :git    => 'https://github.com/puppetlabs/puppetlabs-iis.git',
-  :commit => '49960bcc5c251004d06a4779ad69cfb8ef1563dd'
+mod 'puppet-iis', '3.0.0'

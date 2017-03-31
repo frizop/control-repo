@@ -5,16 +5,14 @@ class profile::base {
     provider => powershell,
   }
 
-  $iis_features = ['Web-WebServer','Web-Scripting-Tools']
-
-  iis_feature { $iis_features:
-    ensure => present,
-  } ->
-
-  iis_site { 'minimal':
-    ensure          => 'started',
-    physicalpath    => 'c:\\inetpub\\minimal',
-    applicationpool => 'DefaultApplicationPool',
+  iis_site { 'Default Web Site':
+    ensure   => 'started',
+    app_pool => 'DefaultAppPool',
+    ip       => '*',
+    path     => 'C:\InetPub\WWWRoot',
+    port     => '80',
+    protocol => 'http',
+    ssl      => false,
   }
 
 }
