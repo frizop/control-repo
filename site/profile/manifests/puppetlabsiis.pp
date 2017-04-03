@@ -9,10 +9,10 @@ class profile::puppetlabsiis {
   } ->
 
   iis_application_pool { 'minimal_site_app_pool':
-    ensure                => 'present',
-    managedpipelinemode   => 'Integrated',
-    managedruntimeversion => 'v4.0',
-    state                 => 'Started'
+    ensure                  => 'present',
+    managed_pipeline_mode   => 'Integrated',
+    managed_runtime_version => 'v4.0',
+    state                   => 'Started'
   } ->
 
   iis_site { 'minimal':
