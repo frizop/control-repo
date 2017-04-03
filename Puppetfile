@@ -21,6 +21,6 @@ mod 'puppetlabs-powershell',  '2.1.0'
 # mod 'puppet-iis',             '3.0.0'
 # mod 'puppetlabs-iis',         '0.1.0'
 mod 'puppetlabs-iis',
-  :git => 'https://github.com/binford2k/puppetlabs-iis.git',
+  :git => 'https://github.com/binford2k/puppetlabs-iis',
   :branch => 'issue_fix'
 mod 'puppet-windowsfeature',  '2.1.0'
