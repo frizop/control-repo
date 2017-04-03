@@ -23,6 +23,6 @@ mod 'puppetlabs-powershell',  '2.1.0'
 
 mod 'puppetlabsiis',
   :git => 'https://github.com/binford2k/puppetlabs-iis',
-  :branch => 'issue_fix'
+  :branch => 'include_fix'
 
 mod 'puppet-windowsfeature',  '2.1.0'
