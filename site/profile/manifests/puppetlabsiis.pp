@@ -8,12 +8,6 @@ class profile::puppetlabsiis {
     ensure => present,
   } ->
 
-  iis_site { 'minimal':
-    ensure          => 'started',
-    physicalpath    => 'c:\\inetpub\\minimal',
-    applicationpool => 'DefaultApplicationPool',
-  }
-
   iis_application_pool { 'minimal_site_app_pool':
     ensure                => 'present',
     managedpipelinemode   => 'Integrated',
