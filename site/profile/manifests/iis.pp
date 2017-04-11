@@ -22,24 +22,24 @@ class profile::iis (
     ensure  => present,
   }
 
-  iis_apppool { '$appname':
+  iis_apppool { $appname:
     ensure                => 'present',
     managedpipelinemode   => 'Integrated',
     managedruntimeversion => 'v4.0',
   }
 
-  iis_site { '$appname':
+  iis_site { $appname:
     ensure   => present,
     require  => Windowsfeature['Web-Server'],
     bindings => ['http/*:80:'],
   }
 
-  iis_app { '$appname/':
+  iis_app { $appname:
     ensure          => present,
     applicationpool => '$appname',
   }
 
-  iis_vdir { '$appname/':
+  iis_vdir { $appname:
     ensure       => 'present',
     iis_app      => '$appname/',
     physicalpath => 'C:\tmp',
