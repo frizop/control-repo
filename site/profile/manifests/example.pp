@@ -1,3 +1,4 @@
+# stuff!
 class profile::example {
 
 }

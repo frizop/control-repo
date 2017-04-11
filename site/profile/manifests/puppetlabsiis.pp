@@ -1,5 +1,5 @@
 # Class: profile::puppetlabsiis
-#
+# i think largely this module is broken, even after pulling it from binford2k's issue branch
 #
 class profile::puppetlabsiis {
   $iis_features = ['Web-WebServer']
