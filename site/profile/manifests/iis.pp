@@ -2,7 +2,9 @@
 # profile to install iis on windows server
 # the profile is based on simondean/iis
 #
-class profile::iis {
+class profile::iis (
+  $appname = 'Default Web Site',
+  ){
 
   $iis_features = ['Web-Server',
     'Web-WebServer',
@@ -20,26 +22,26 @@ class profile::iis {
     ensure  => present,
   }
 
-  iis_apppool { '$appName':
+  iis_apppool { '$appname':
     ensure                => 'present',
     managedpipelinemode   => 'Integrated',
     managedruntimeversion => 'v4.0',
   }
 
-  iis_site { '$appName':
+  iis_site { '$appname':
     ensure   => present,
     require  => Windowsfeature['Web-Server'],
     bindings => ['http/*:80:'],
   }
 
-  iis_app { '$appName/':
+  iis_app { '$appname/':
     ensure          => present,
-    applicationpool => '$appName',
+    applicationpool => '$appname',
   }
 
-  iis_vdir { '$appName/':
+  iis_vdir { '$appname/':
     ensure       => 'present',
-    iis_app      => '$appName/',
+    iis_app      => '$appname/',
     physicalpath => 'C:\tmp',
   }
 
