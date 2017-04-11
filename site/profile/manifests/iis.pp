@@ -36,13 +36,13 @@ class profile::iis (
 
   iis_app { $appname:
     ensure          => present,
-    applicationpool => '$appname',
+    applicationpool => $appname,
   }
 
   iis_vdir { $appname:
     ensure       => 'present',
-    iis_app      => '$appname/',
-    physicalpath => 'C:\tmp',
+    iis_app      => $appname,
+    physicalpath => 'C:\\tmp',
   }
 
 }
