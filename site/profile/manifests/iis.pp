@@ -3,8 +3,13 @@
 # the profile is based on simondean/iis
 #
 class profile::iis (
+
   $appname = 'Default Web Site',
+  $foo = pick($::puppet_vra_properties['something'], 'some_value')
+
   ){
+
+  notice { $foo: }
 
   file { 'c:\\tmp':
     ensure => directory,
@@ -47,7 +52,7 @@ class profile::iis (
     ensure       => 'present',
     iis_app      => "$appname/",
     physicalpath => 'C:\\tmp',
-    require      => File['c:\\tmp']
+    require      => File['c:\\tmp'],
   }
 
 }
