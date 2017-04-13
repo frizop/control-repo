@@ -46,6 +46,10 @@ class profile::iis (
     bindings => ['http/*:80:'],
   }
 
+  iis_app { 'Default Web Site/':
+    ensure => absent,
+  }
+
   iis_app { "$appname/":
     ensure          => present,
     applicationpool => $appname,
