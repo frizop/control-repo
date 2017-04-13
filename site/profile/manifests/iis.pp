@@ -9,7 +9,7 @@ class profile::iis (
 
   ){
 
-  notice { $foo: }
+  notify { $foo: }
 
   file { 'c:\\tmp':
     ensure => directory,
