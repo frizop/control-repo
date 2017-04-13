@@ -34,14 +34,14 @@ class profile::iis (
     bindings => ['http/*:80:'],
   }
 
-  iis_app { '$appname/':
+  iis_app { "$appname/":
     ensure          => present,
     applicationpool => $appname,
   }
 
-  iis_vdir { '$appname/':
+  iis_vdir { "$appname/":
     ensure       => 'present',
-    iis_app      => '$appname/',
+    iis_app      => "$appname/",
     physicalpath => 'C:\\tmp',
   }
 
