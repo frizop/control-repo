@@ -5,7 +5,7 @@
 class profile::iis (
 
   $appname = 'Default Web Site',
-  $foo = pick($::puppet_vra_properties['something'], 'some_value')
+  $foo = pick($puppet_vra_properties['something'], 'some_value')
 
   ){
 
