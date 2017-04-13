@@ -4,15 +4,10 @@
 #
 class profile::iis (
 
-  String $appname = 'Default Web Site',
+  String $appname = 'stuff',
   String $foo = 'default_value',
 
   ) {
-
-  if has_key($::puppet_vra_properties, 'something') {
-    $foo = $::puppet_vra_properties['something']
-  }
-  notify { $foo: }
 
   file { 'c:\\tmp':
     ensure => directory,
