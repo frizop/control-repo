@@ -5,9 +5,11 @@
 class profile::iis (
 
   String $appname = 'stuff',
-  String $foo = 'default_value',
+  String $foo = pick($::puppet_vra_property.dig('something'), 'default value'),
 
   ) {
+
+  notify { $foo: }
 
   file { 'c:\\tmp':
     ensure => directory,
@@ -43,11 +45,13 @@ class profile::iis (
 
   iis_app { 'Default Web Site/':
     ensure => absent,
+    require => Windowsfeature['Web-WebServer'],
   }
 
   iis_app { "$appname/":
     ensure          => present,
     applicationpool => $appname,
+    require => Windowsfeature['Web-WebServer'],
   }
 
   iis_vdir { "$appname/":
