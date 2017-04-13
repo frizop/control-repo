@@ -5,7 +5,10 @@
 class profile::iis (
 
   $appname = 'Default Web Site',
-  $foo = pick_default($::puppet_vra_properties['something'], 'some_value')
+  $foo = has_key($::puppet_vra_properties, 'something')
+  if ! $foo {
+    $foo = 'something_default'
+  }
 
   ) {
 
