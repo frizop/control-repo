@@ -4,13 +4,13 @@
 #
 class profile::iis (
 
-  $appname = 'Default Web Site',
-  $foo = $::puppet_vra_properties['something']
+  String $appname = 'Default Web Site',
+  String $foo = 'default_value',
 
   ) {
 
-  if ! $foo {
-    $foo = 'something_default'
+  if has_key($::puppet_vra_properties, 'something') {
+    $foo = $::puppet_vra_properties['something']
   }
   notify { $foo: }
 
