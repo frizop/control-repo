@@ -6,6 +6,10 @@ class profile::iis (
   $appname = 'Default Web Site',
   ){
 
+  file { 'c:\\tmp':
+    ensure => directory,
+  }
+
   $iis_features = ['Web-Server',
     'Web-WebServer',
     'Web-Asp-Net45',
@@ -43,6 +47,7 @@ class profile::iis (
     ensure       => 'present',
     iis_app      => "$appname/",
     physicalpath => 'C:\\tmp',
+    require      => File['c:\\tmp']
   }
 
 }
