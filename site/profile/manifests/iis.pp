@@ -8,7 +8,7 @@ class profile::iis (
 
   ) {
 
-  notify { $::appname: }
+  notify { $appname: }
 
   file { 'c:\\tmp':
     ensure => directory,
