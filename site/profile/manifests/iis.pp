@@ -5,13 +5,13 @@
 class profile::iis (
 
   $appname = 'Default Web Site',
-  $foo = has_key($::puppet_vra_properties, 'something')
-  if ! $foo {
-    $foo = 'something_default'
-  }
+  $foo = $::puppet_vra_properties['something']
 
   ) {
 
+  if ! $foo {
+    $foo = 'something_default'
+  }
   notify { $foo: }
 
   file { 'c:\\tmp':
