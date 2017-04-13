@@ -4,12 +4,11 @@
 #
 class profile::iis (
 
-  String $appname = 'stuff',
-  String $foo = pick($::puppet_vra_property.dig('something'), 'default value'),
+  String $appname = pick($::puppet_vra_property.dig('Albertsons.AppCode'), 'appname'),
 
   ) {
 
-  notify { $foo: }
+  notify { $::foo: }
 
   file { 'c:\\tmp':
     ensure => directory,
@@ -43,20 +42,21 @@ class profile::iis (
     bindings => ['http/*:80:'],
   }
 
+  # We're going to remove the default web site, as it is already bound to port-80
   iis_app { 'Default Web Site/':
-    ensure => absent,
+    ensure  => absent,
     require => Windowsfeature['Web-WebServer'],
   }
 
-  iis_app { "$appname/":
+  iis_app { "${appname}/":
     ensure          => present,
     applicationpool => $appname,
-    require => Windowsfeature['Web-WebServer'],
+    require         => Windowsfeature['Web-WebServer'],
   }
 
-  iis_vdir { "$appname/":
+  iis_vdir { "${appname}/":
     ensure       => 'present',
-    iis_app      => "$appname/",
+    iis_app      => "${appname}/",
     physicalpath => 'C:\\tmp',
     require      => File['c:\\tmp'],
   }
