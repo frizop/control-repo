@@ -4,7 +4,7 @@
 #
 class profile::iis (
 
-  String $appname = pick($::puppet_vra_property.dig('Albertsons.AppCode'), 'appname'),
+  String $appname = pick($::puppet_vra_property.dig('Albertsons.AppCode'), 'poop'),
 
   ) {
 
@@ -14,7 +14,8 @@ class profile::iis (
     ensure => directory,
   }
 
-  $iis_features = ['Web-Server',
+  $iis_features = [
+    'Web-Server',
     'Web-WebServer',
     'Web-Asp-Net45',
     'Web-ISAPI-Ext',
