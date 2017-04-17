@@ -4,7 +4,7 @@
 #
 class profile::iis (
 
-  String $appname = pick($::puppet_vra_property.dig('Albertsons.AppCode'), 'poop'),
+  String $appname = pick($::puppet_vra_property.dig('Albertsons.AppCode'), 'appname'),
 
   ) {
 
