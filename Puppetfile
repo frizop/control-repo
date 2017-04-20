@@ -18,12 +18,18 @@ forge "http://forge.puppetlabs.com"
 
 mod 'puppetlabs-stdlib',      '4.16.0'
 mod 'puppetlabs-powershell',  '2.1.0'
-# mod 'puppet-iis',             '3.0.0'
-# mod 'puppetlabs-iis',         '0.1.0'
-
-# mod 'puppetlabsiis',
-#   :git => 'https://github.com/binford2k/puppetlabs-iis',
-#   :branch => 'include_fix'
 
 mod 'puppet-windowsfeature',  '2.1.0'
-mod 'simondean/iis'
+mod 'simondean-iis',          '0.1.3'
+
+mod 'puppetlabs-puppetserver_gem', '0.2.0'
+mod 'puppet-hiera', '2.4.0'
+mod 'puppetlabs-inifile', '1.6.0'
+
+# not being used:
+
+# mod 'puppet-iis',             '3.0.0'
+# mod 'puppetlabs-iis',         '0.1.0'
+# mod 'puppetlabs-iis',
+#   :git => 'https://github.com/binford2k/puppetlabs-iis',
+#   :branch => 'include_fix'
