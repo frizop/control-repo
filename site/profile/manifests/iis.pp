@@ -39,7 +39,7 @@ class profile::iis (
 
   iis_site { $appname:
     ensure   => present,
-    require  => Windowsfeature['Web-Server'],
+    # require  => Windowsfeature['Web-Server'],
     bindings => ['http/*:80:'],
     require  => Iis_app['Default Web Site/'],
   }
