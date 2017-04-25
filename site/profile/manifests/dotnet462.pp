@@ -10,6 +10,10 @@ class profile::dotnet462 {
       provider => powershell,
     }
 
+    reboot { 'check-pending':
+      when => pending
+    }
+
   }
 
 }

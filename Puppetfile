@@ -26,6 +26,8 @@ mod 'puppetlabs-puppetserver_gem', '0.2.0'
 mod 'puppet-hiera', '2.4.0'
 mod 'puppetlabs-inifile', '1.6.0'
 
+mod 'puppetlabs-reboot', '1.2.1'
+
 # not being used:
 
 # mod 'puppet-iis',             '3.0.0'
