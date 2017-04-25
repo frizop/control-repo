@@ -1,1 +1,3 @@
 hieradata/nodes/example-puppet-master.yaml
+control-repo.sublime-project
+control-repo.sublime-workspace
