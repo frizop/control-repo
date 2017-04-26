@@ -12,7 +12,7 @@ class profile::puppetlabsiis {
     ensure                  => 'present',
     managed_pipeline_mode   => 'Integrated',
     managed_runtime_version => 'v4.0',
-    state                   => 'Started'
+    state                   => 'Started',
     require                 => Iis_feature['Web-WebServer'],
   }
 
