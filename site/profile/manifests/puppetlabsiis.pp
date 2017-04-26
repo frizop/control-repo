@@ -23,4 +23,12 @@ class profile::puppetlabsiis {
     require         => Iis_application_pool['minimal_site_app_pool'],
   }
 
+  iis_site { 'Default Web Site':
+    ensure => 'absent',
+  }
+
+  iis_site { 'appname':
+    ensure => 'absent',
+  }
+
 }
