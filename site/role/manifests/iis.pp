@@ -2,6 +2,6 @@
 #
 #
 class role::iis {
-  include profile::iis
+  include profile::puppetlabsiis
   include profile::dotnet462
 }

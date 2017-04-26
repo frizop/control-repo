@@ -6,19 +6,21 @@ class profile::puppetlabsiis {
 
   iis_feature { $iis_features:
     ensure => present,
-  } ->
+  }
 
   iis_application_pool { 'minimal_site_app_pool':
     ensure                  => 'present',
     managed_pipeline_mode   => 'Integrated',
     managed_runtime_version => 'v4.0',
     state                   => 'Started'
-  } ->
+    require                 => Iis_feature['Web-WebServer'],
+  }
 
   iis_site { 'minimal':
     ensure          => 'started',
     physicalpath    => 'c:\\inetpub\\minimal',
     applicationpool => 'minimal_site_app_pool',
+    require         => Iis_application_pool['minimal_site_app_pool'],
   }
 
 }
