@@ -19,7 +19,11 @@ forge "http://forge.puppetlabs.com"
 mod 'puppetlabs-stdlib',      '4.16.0'
 mod 'puppetlabs-powershell',  '2.1.0'
 
-mod 'puppet-windowsfeature',  '2.1.0'
+# mod 'puppet-windowsfeature',  '2.1.0'
+mod 'windowsfeature',
+  :git    => 'https://github.com/voxpupuli/puppet-windowsfeature.git',
+  :commit => '79df14b7186e290e45e1281747c0cf7269d5f6d1'
+
 # mod 'simondean-iis',          '0.1.3'
 
 mod 'puppetlabs-puppetserver_gem', '0.2.0'
