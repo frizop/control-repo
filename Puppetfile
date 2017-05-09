@@ -24,7 +24,7 @@ mod 'windowsfeature',
   :git    => 'https://github.com/voxpupuli/puppet-windowsfeature.git',
   :commit => '79df14b7186e290e45e1281747c0cf7269d5f6d1'
 
-mod 'simondean-iis',          '0.1.3'
+# mod 'simondean-iis',          '0.1.3'
 
 mod 'puppetlabs-puppetserver_gem', '0.2.0'
 mod 'puppet-hiera', '2.4.0'
@@ -36,6 +36,6 @@ mod 'puppetlabs-reboot', '1.2.1'
 
 # mod 'puppet-iis',             '3.0.0'
 # mod 'puppetlabs-iis',         '0.1.0'
-# mod 'puppetlabs-iis',
-#   :git    => 'https://github.com/puppetlabs/puppetlabs-iis.git',
+mod 'puppetlabs-iis',
+  :git    => 'https://github.com/puppetlabs/puppetlabs-iis.git'
 #   :commit => '56dd3537e47e3045d974d6df0caba37416410381'

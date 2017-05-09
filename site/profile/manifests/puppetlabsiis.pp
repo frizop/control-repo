@@ -1,7 +1,12 @@
 # Class: profile::puppetlabsiis
 # i think largely this module is broken, even after pulling it from binford2k's issue branch
 #
-class profile::puppetlabsiis {
+class profile::puppetlabsiis (
+
+  String $appname = pick($::puppet_vra_property.dig('Albertson.AppCode'), 'appname'),
+
+) {
+
   $iis_features = ['Web-WebServer']
 
   iis_feature { $iis_features:
