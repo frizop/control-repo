@@ -37,7 +37,7 @@ class profile::puppetlabsiis (
 
   iis_site { $appname:
     ensure          => 'started',
-    physicalpath    => 'c:\\inetpub\\${appname}',
+    physicalpath    => "c:\\inetpub\\${appname}",
     applicationpool => 'minimal_site_app_pool',
     require         => Iis_application_pool['minimal_site_app_pool'],
   }
