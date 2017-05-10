@@ -12,6 +12,10 @@ class profile::dotnet (
     message => $::dotnet_installed_version,
   }
 
+  notify { 'dotnet_wanted_version': 
+    message => $::dotnet_wanted_version,
+  }
+
   # class to install dotnet_wanted_version
   if $dotnet_wanted_version == '3.5' and $::dotnet_installed_version != '3.5' {
 

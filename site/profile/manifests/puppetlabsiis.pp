@@ -1,13 +1,24 @@
 # Class: profile::puppetlabsiis
-# i think largely this module is broken, even after pulling it from binford2k's issue branch
+# i think largely this module is working, but only when pulling from git
 #
 class profile::puppetlabsiis (
 
-  String $appname = pick($::puppet_vra_property.dig('foo.AppCode'), 'appname'),
+  String $appname = pick($::puppet_vra_property.dig('foo.AppCode'), 'abc123'),
 
 ) {
 
-  $iis_features = ['Web-WebServer']
+  $iis_features = [
+    'Web-Server',
+    'Web-WebServer',
+    'Web-Asp-Net45',
+    'Web-ISAPI-Ext',
+    'Web-ISAPI-Filter',
+    'NET-Framework-45-ASPNET',
+    'Web-Http-Redirect',
+    'Web-Filtering',
+    'Web-Mgmt-Console',
+    'Web-Mgmt-Tools',
+  ]
 
   iis_feature { $iis_features:
     ensure => present,
