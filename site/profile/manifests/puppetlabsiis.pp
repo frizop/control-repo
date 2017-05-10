@@ -23,7 +23,7 @@ class profile::puppetlabsiis (
     ensure => present,
   }
 
-  iis_application_pool { 'minimal_site_app_pool':
+  iis_application_pool { "${appname}_app_pool":
     ensure                  => 'present',
     managed_pipeline_mode   => 'Integrated',
     managed_runtime_version => 'v4.0',
@@ -43,7 +43,7 @@ class profile::puppetlabsiis (
   iis_site { $appname:
     ensure          => 'started',
     physicalpath    => "c:\\inetpub\\${appname}",
-    applicationpool => 'minimal_site_app_pool',
+    applicationpool => "${appname}_app_pool",
     require         => [
       Iis_application_pool['minimal_site_app_pool'], 
       File["c:\\inetpub\\${appname}"],
