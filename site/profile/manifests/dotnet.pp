@@ -9,7 +9,7 @@ class profile::dotnet (
 ) {
 
   notify { 'dotnet_installed_version': 
-    message => '$::dotnet_installed_version',
+    message => $::dotnet_installed_version,
   }
 
   # class to install dotnet_wanted_version
