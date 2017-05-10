@@ -3,7 +3,7 @@
 # 
 class profile::dotnet (
 
-  String $dotnet_wanted_version = pick($::puppet_vra_property.dig('Albertsons.dotnetversion'), '4.6.2'),
+  String $dotnet_wanted_version = pick($::puppet_vra_property.dig('foo.dotnetversion'), '4.6.2'),
   String $windowssource         = 'C:\\vagrant\\files\\sxs'
 
 ) {
@@ -36,7 +36,7 @@ class profile::dotnet (
   } elsif $::dotnet_installed_version != $dotnet_wanted_version {
 
     exec { "install-dotnet${dotnet_wanted_version}":
-      command  => "Start-Process -Wait -FilePath \\\\d2nas01\\dv140v\\paas\\dotnetinstall${dotnet_wanted_version}.exe -ArgumentList /q, /norestart",
+      command  => "Start-Process -Wait -FilePath $windowssource\\${dotnet_wanted_version}.exe -ArgumentList /q, /norestart",
       provider => powershell,
     }
 

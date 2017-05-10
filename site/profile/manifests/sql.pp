@@ -1,10 +1,10 @@
 # Simple SQL Profile to install MSSQL based on share
 class profile::sql (
 
-  String $collation = pick($::puppet_vra_property.dig('Albertsons.COLLATION'), 'SQL_Latin1_General_CP1_CI_AS'),
-  String $sqlport   = pick($::puppet_vra_property.dig('Albertson.SqlServer.PortNumber'), '52065'),
-  String $sqluser   = pick($::puppet_vra_property.dig('Albertson.SqlServer.UserName'), 'loggingUser'),
-  String $sqlpw     = pick($::puppet_vra_property.dig('Albertson.SqlServer.Password'), 'Pupp3t1@'),
+  String $collation = pick($::puppet_vra_property.dig('foo.COLLATION'), 'SQL_Latin1_General_CP1_CI_AS'),
+  String $sqlport   = pick($::puppet_vra_property.dig('foo.SqlServer.PortNumber'), '52065'),
+  String $sqluser   = pick($::puppet_vra_property.dig('foo.SqlServer.UserName'), 'loggingUser'),
+  String $sqlpw     = pick($::puppet_vra_property.dig('foo.SqlServer.Password'), 'Pupp3t1@'),
 
 ) {
 
@@ -17,12 +17,12 @@ class profile::sql (
   }
 
   notify { 'sqlport':
-    message => $::puppet_vra_properties['Albertson.SqlServer.PortNumber'],
+    message => $::puppet_vra_properties['foo.SqlServer.PortNumber'],
   }
 
   sqlserver_instance { 'MSSQLSERVER':
     features              => ['SQLEngine', 'Replication', 'FullText'],
-    source                => '\\\\pcntapnas01.safeway.com\\atlas\\paas\\Database\\SQL2014ENT',
+    source                => 'c:\\tmp\\foo',
     # agt_svc_account       => '',
     # agt_svc_password      => '',
     # sql_svc_account       => '',
@@ -43,7 +43,7 @@ class profile::sql (
   }
 
   sqlserver_features { 'Generic Features':
-    source   => '\\\\pcntapnas01\\atlas\\paas\\Database\\SQL2014ENT',
+    source   => 'c:\\tmp\\foo',
     features => ['Tools'],
     # is_svc_account  => '',
     # is_svc_password => '',
