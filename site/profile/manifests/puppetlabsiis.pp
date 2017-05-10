@@ -31,7 +31,7 @@ class profile::puppetlabsiis (
     require                 => Iis_feature['Web-WebServer'],
   }
 
-  file { 'c:\\inetpub\\${appname}':
+  file { "c:\\inetpub\\${appname}":
     ensure => directory,
   }
 
