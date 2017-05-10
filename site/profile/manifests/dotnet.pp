@@ -18,7 +18,7 @@ class profile::dotnet (
   }
 
   # class to install dotnet_wanted_version
-  if ($::dotnet_wanted_version == "3.5") and ($::dotnet_installed_version != "3.5") {
+  if ("3.5" == "3.5") and ("4.6.2" != "3.5") {
 
     windowsfeature { 'NET-Framework-Features':
       ensure => present,
