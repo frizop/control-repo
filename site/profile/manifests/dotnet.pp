@@ -7,8 +7,12 @@ class profile::dotnet (
   String $windowssource         = 'C:\\vagrant\\files\\sxs'
 
 ) {
+
+  notify { 'dotnet_installed_version': 
+    message => '$::dotnet_installed_version',
+  }
+
   # class to install dotnet_wanted_version
-  notify { '$dotnet_installed_version': }
   if $dotnet_wanted_version == '3.5' and $::dotnet_installed_version != '3.5' {
 
     windowsfeature { 'NET-Framework-Features':
