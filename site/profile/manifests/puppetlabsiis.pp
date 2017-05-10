@@ -15,6 +15,8 @@ class profile::puppetlabsiis (
     'Web-ISAPI-Filter',
     'Web-Http-Redirect',
     'Web-Filtering',
+    'Web-Mgmt-Console',
+    'Web-Mgmt-Tools',
   ]
 
   iis_feature { $iis_features:
@@ -29,18 +31,18 @@ class profile::puppetlabsiis (
     require                 => Iis_feature['Web-WebServer'],
   }
 
-  iis_site { 'minimal':
+  file { 'c:\\inetpub\\${appname}':
+    ensure => directory,
+  }
+
+  iis_site { '${appname}':
     ensure          => 'started',
-    physicalpath    => 'c:\\inetpub\\minimal',
+    physicalpath    => 'c:\\inetpub\\${appname}',
     applicationpool => 'minimal_site_app_pool',
     require         => Iis_application_pool['minimal_site_app_pool'],
   }
 
   iis_site { 'Default Web Site':
-    ensure => 'absent',
-  }
-
-  iis_site { 'appname':
     ensure => 'absent',
   }
 

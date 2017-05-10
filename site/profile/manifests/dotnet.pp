@@ -4,7 +4,8 @@
 class profile::dotnet (
 
   String $dotnet_wanted_version = pick($::puppet_vra_property.dig('foo.dotnetversion'), '4.6.2'),
-  String $windowssource         = 'C:\\vagrant\\files\\sxs'
+  String $windowssource         = 'C:\\vagrant\\files\\sxs',
+  String $dotnetsource          = 'C:\\vagrant\\files'
 
 ) {
 
@@ -17,6 +18,7 @@ class profile::dotnet (
   }
 
   # class to install dotnet_wanted_version
+  pry()
   if $dotnet_wanted_version == '3.5' and $::dotnet_installed_version != '3.5' {
 
     windowsfeature { 'NET-Framework-Features':
@@ -45,7 +47,7 @@ class profile::dotnet (
   } elsif $::dotnet_installed_version != $dotnet_wanted_version {
 
     exec { "install-dotnet${dotnet_wanted_version}":
-      command  => "Start-Process -Wait -FilePath $windowssource\\${dotnet_wanted_version}.exe -ArgumentList /q, /norestart",
+      command  => "Start-Process -Wait -FilePath $dotnetsource\\${dotnet_wanted_version}.exe -ArgumentList /q, /norestart",
       provider => powershell,
     }
 
