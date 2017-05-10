@@ -35,6 +35,11 @@ class profile::puppetlabsiis (
     ensure => directory,
   }
 
+  file { 'c:\\inetpub\\index.html':
+    ensure  => file,
+    content => '<html><head>this is the header</head><body>this is a website</body></html>',
+  }
+
   iis_site { $appname:
     ensure          => 'started',
     physicalpath    => "c:\\inetpub\\${appname}",
