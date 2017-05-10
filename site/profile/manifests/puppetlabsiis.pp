@@ -35,7 +35,7 @@ class profile::puppetlabsiis (
     ensure => directory,
   }
 
-  file { 'c:\\inetpub\\index.html':
+  file { "c:\\inetpub\\${appname}\\index.html":
     ensure  => file,
     content => '<html><head>this is the header</head><body>this is a website</body></html>',
   }
@@ -47,6 +47,7 @@ class profile::puppetlabsiis (
     require         => [
       Iis_application_pool['minimal_site_app_pool'], 
       File["c:\\inetpub\\${appname}"],
+      File["c:\\inetpub\\${appname}\\index.html"],
     ],
   }
 
