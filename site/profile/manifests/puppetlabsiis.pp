@@ -35,7 +35,7 @@ class profile::puppetlabsiis (
     ensure => directory,
   }
 
-  iis_site { '${appname}':
+  iis_site { $appname:
     ensure          => 'started',
     physicalpath    => 'c:\\inetpub\\${appname}',
     applicationpool => 'minimal_site_app_pool',
