@@ -3,7 +3,7 @@
 #
 class profile::puppetlabsiis (
 
-  String $appname = pick($::puppet_vra_property.dig('foo.AppCode'), 'abc123'),
+  String $appname = pick($::puppet_vra_property.dig('foo.AppCode'), 'abcabc'),
 
 ) {
 
