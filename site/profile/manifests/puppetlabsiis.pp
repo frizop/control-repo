@@ -13,11 +13,8 @@ class profile::puppetlabsiis (
     'Web-Asp-Net45',
     'Web-ISAPI-Ext',
     'Web-ISAPI-Filter',
-    'NET-Framework-45-ASPNET',
     'Web-Http-Redirect',
     'Web-Filtering',
-    'Web-Mgmt-Console',
-    'Web-Mgmt-Tools',
   ]
 
   iis_feature { $iis_features:
