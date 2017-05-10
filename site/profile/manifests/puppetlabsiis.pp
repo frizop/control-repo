@@ -45,7 +45,7 @@ class profile::puppetlabsiis (
     physicalpath    => "c:\\inetpub\\${appname}",
     applicationpool => "${appname}_app_pool",
     require         => [
-      Iis_application_pool['minimal_site_app_pool'], 
+      Iis_application_pool["${appname}_app_pool"], 
       File["c:\\inetpub\\${appname}"],
       File["c:\\inetpub\\${appname}\\index.html"],
     ],
