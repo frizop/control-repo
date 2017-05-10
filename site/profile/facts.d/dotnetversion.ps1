@@ -32,4 +32,4 @@ elseif ($key -eq 394806) {
   $version = '4.6.2'
 }
 
-Write-Host "dotnet_version=${version}"
+Write-Host "dotnet_installed_version=${version}"
