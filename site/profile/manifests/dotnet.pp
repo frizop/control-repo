@@ -18,7 +18,7 @@ class profile::dotnet (
   }
 
   # class to install dotnet_wanted_version
-  if $::dotnet_wanted_version == '3.5' and $::dotnet_installed_version != '3.5' {
+  if ($::dotnet_wanted_version == '3.5') and ($::dotnet_installed_version != '3.5') {
 
     windowsfeature { 'NET-Framework-Features':
       ensure => present,
@@ -43,7 +43,7 @@ class profile::dotnet (
       require => Windowsfeature['NET-HTTP-Activation'],
     }
 
-  } elsif $::dotnet_installed_version != $::dotnet_wanted_version {
+  } elsif ($::dotnet_installed_version != $::dotnet_wanted_version) {
 
     exec { "install-dotnet${dotnet_wanted_version}":
       command  => "Start-Process -Wait -FilePath $dotnetsource\\${dotnet_wanted_version}.exe -ArgumentList /q, /norestart",
