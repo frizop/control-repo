@@ -3,7 +3,7 @@
 #
 class profile::puppetlabsiis (
 
-  String $appname = pick($::puppet_vra_property.dig('foo.AppCode'), 'abcabc'),
+  String $appname = pick($::puppet_vra_property.dig('foo.AppCode'), 'abc123'),
 
 ) {
 
@@ -39,7 +39,10 @@ class profile::puppetlabsiis (
     ensure          => 'started',
     physicalpath    => "c:\\inetpub\\${appname}",
     applicationpool => 'minimal_site_app_pool',
-    require         => Iis_application_pool['minimal_site_app_pool'],
+    require         => [
+      Iis_application_pool['minimal_site_app_pool'], 
+      File["c:\\inetpub\\${appname}"],
+    ],
   }
 
   iis_site { 'Default Web Site':
