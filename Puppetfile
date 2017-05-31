@@ -39,3 +39,5 @@ mod 'puppetlabs-reboot', '1.2.1'
 mod 'puppetlabs-iis',
   :git    => 'https://github.com/puppetlabs/puppetlabs-iis.git'
 #   :commit => '56dd3537e47e3045d974d6df0caba37416410381'
+
+mod 'jsok-vault', '1.2.3'
