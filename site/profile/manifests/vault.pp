@@ -18,5 +18,17 @@ class profile::vault {
     }
   }
   
-  include vault
+  class { '::vault':
+    backend => {
+      'file' => {
+        'path' => '/tmp',
+      }
+    },
+    listener => {
+      'tcp' => {
+        'address' => '0.0.0.0:8200',
+        'tls_disable' => 0,
+      }
+    }
+  }
 }
