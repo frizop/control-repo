@@ -26,7 +26,13 @@ File { backup => false }
 # specified in the console for that node.
 
 node default {
-  # This is where you can declare classes for all nodes.
-  # Example:
-  #   class { 'my_class': }
+
+  ini_setting { 'use_cached_catalog':
+    ensure  => present,
+    path    => $settings::config,
+    section => 'agent',
+    setting => 'use_cached_catalog',
+    value   => 'true',
+  }
+
 }
