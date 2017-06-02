@@ -8,13 +8,13 @@ class profile::vault {
       ensure => present,
     }
 
-    package { 'bunzip':
+    package { 'unzip':
       ensure => present,
     }
 
     Archive {
       provider => 'wget',
-      require  => Package['wget', 'bunzip'],
+      require  => Package['wget', 'unzip'],
     }
   }
   
