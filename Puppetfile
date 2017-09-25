@@ -20,10 +20,6 @@ mod 'puppetlabs-puppetserver_gem',
   :git    => 'https://github.com/puppetlabs/puppetlabs-puppetserver_gem.git',
   :commit => 'b6198bd31a8511f9ddb20ece81b1a7de5c77b4a2'
 
-mod 'puppetlabs-iis',
-  :git    => 'https://github.com/puppetlabs/puppetlabs-iis.git',
-  :commit => '20b487228223e633399aca5ff72cf8c0bfa1c085'
-
 mod 'puppet-hiera',
   :git    => 'https://github.com/voxpupuli/puppet-hiera.git',
   :commit => '63d0e8a4ede650490c19e2611e56c037955f2962'
