@@ -37,7 +37,7 @@ node default {
 
   $encrypted = node_encrypt("This is a fun string!")
   
-  file { '/etc/something/or/other.conf':
+  file { '/other.conf':
     ensure  => file,
     owner   => root,
     group   => root,
