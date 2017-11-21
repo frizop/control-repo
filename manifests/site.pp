@@ -29,4 +29,9 @@ node default {
   # This is where you can declare classes for all nodes.
   # Example:
   #   class { 'my_class': }
+  node_encrypt::file { '/tmp/foo':
+    owner   => 'root',
+    group   => 'root',
+    content => 'This string will never appear in the catalog.',
+  }
 }
