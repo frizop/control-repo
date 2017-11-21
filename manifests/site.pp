@@ -34,4 +34,16 @@ node default {
     group   => 'root',
     content => 'This string will never appear in the catalog.',
   }
+
+  $encrypted = node_encrypt("This is a fun string!")
+  
+  file { '/etc/something/or/other.conf':
+    ensure  => file,
+    owner   => root,
+    group   => root,
+    mode    => '0644',
+    content => "password = ${encrypted}",
+  }
+
+
 }
