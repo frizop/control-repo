@@ -37,12 +37,10 @@ node default {
 
   $encrypted = node_encrypt("This is a fun string!")
   
-  file { '/other.conf':
-    ensure  => file,
-    owner   => root,
-    group   => root,
-    mode    => '0644',
-    content => "password = ${encrypted}",
+  node_encrypt::file { '/tmp/template_test':
+    owner             => 'root',
+    group             => 'root',
+    encrypted_content => epp('profile/example.epp'),
   }
 
 
