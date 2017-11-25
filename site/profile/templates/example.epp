@@ -1,5 +1,3 @@
 <%- | String   $encrypted | -%>
 <%# Expression-printing tag ↓ -%>
 keys <%= $encrypted %>
-
-<% } -%>
