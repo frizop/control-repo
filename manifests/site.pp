@@ -40,7 +40,7 @@ node default {
   node_encrypt::file { '/tmp/template_test':
     owner             => 'root',
     group             => 'root',
-    encrypted_content => epp('profile/example.epp', {'text' => 'encrypted'}),
+    content => epp('profile/example.epp', {'text' => 'encrypted'}),
   }
 
 
