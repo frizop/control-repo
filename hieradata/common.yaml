@@ -1,2 +1,3 @@
 ---
 message: "This node is using common data"
+puppet_enterprise::master::code_manager::invalid_branches: correct
