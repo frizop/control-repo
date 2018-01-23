@@ -32,7 +32,9 @@ node default {
   node_encrypt::file { '/tmp/foo':
     owner   => 'root',
     group   => 'root',
-    content => 'This string will never appear in the catalog.',
+    content => 'This string will never appear in
+
+     the catalog.',
   }
 
   $encrypted = node_encrypt('This is a fun string!')
