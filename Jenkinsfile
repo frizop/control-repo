@@ -1,17 +1,17 @@
 pipeline {
   agent { docker 'ruby:2.4.1' }
   stages {
-    stage('build') {
+    stage('bundle install') {
       steps {
         sh 'bundle install'
       }
     }
-    stage('Validate') {
+    stage('rake validate') {
       steps {
         sh 'bundle exec rake validate'
       }
     }
-    stage('lint') {
+    stage('rake lint') {
       steps {
         sh 'bundle exec rake lint'
       }
