@@ -1,5 +1,5 @@
 pipeline {
-  agent { docker 'ruby:2.4.1' }
+  agent { dockerfile true }
   stages {
     stage('bundle install') {
       steps {
