@@ -35,13 +35,18 @@ node default {
     content => 'This string will never appear in the catalog.',
   }
 
-  $encrypted = node_encrypt("This is a fun string!")
-  
+  $encrypted = node_encrypt('This is a fun string!')
+
   node_encrypt::file { '/tmp/template_test':
-    owner             => 'root',
-    group             => 'root',
+    owner   => 'root',
+    group   => 'root',
     content => epp('profile/example.epp', {'text' => $encrypted}),
   }
 
 
+}
+
+node 'agent10' {
+  include profile::test1
+  include profile::test2
 }
