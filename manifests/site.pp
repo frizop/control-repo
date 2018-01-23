@@ -31,7 +31,7 @@ node default {
   #   class { 'my_class': }
   node_encrypt::file { '/tmp/foo':
     owner   => 'root',
-    group   => 'root
+    group   => 'root',
     content => 'This string will never appear in the catalog.',
   }
 
