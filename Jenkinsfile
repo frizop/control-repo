@@ -6,17 +6,21 @@ pipeline {
         sh 'bundle install'
       }
     }
-    parallel {
-      stage('rake validate') {
-        steps {
-          sh 'bundle exec rake validate'
+    stage('Parallel Stage') {
+      failFast true
+      parallel {
+        stage('rake validate') {
+          steps {
+            sh 'bundle exec rake validate'
+          }
         }
-      }
-      stage('rake lint') {
-        steps {
-          sh 'bundle exec rake lint'
+        stage('rake lint') {
+          steps {
+            sh 'bundle exec rake lint'
+          }
         }
       }
     }
+
   }
 }
