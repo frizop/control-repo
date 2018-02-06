@@ -19,8 +19,12 @@ pipeline {
             sh 'bundle exec rake lint'
           }
         }
+        stage('rake rubocop') {
+          steps {
+            sh 'bundle exec rake rubocop'
+          }
+        }
       }
     }
-
   }
 }
