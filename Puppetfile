@@ -1,4 +1,4 @@
-forge "http://forge.puppetlabs.com"
+forge 'http://forge.puppetlabs.com'
 
 mod 'puppetlabs-inifile', '2.0.0'
 mod 'binford2k-node_encrypt', '0.3.1'
