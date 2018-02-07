@@ -5,7 +5,6 @@ rescue LoadError
   t = Time.new
   puts t.to_i
 else
-
   environmentpath = ARGV[0]
   environment     = ARGV[1]
 
@@ -20,5 +19,5 @@ else
 
   # add something to find the remote url
 
-  puts head_sha 
+  puts head_sha
 end
