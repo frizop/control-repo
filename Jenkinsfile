@@ -20,10 +20,10 @@ pipeline {
           }
         }
       }
-      stage('rake rubocop') {
-        steps {
-          sh 'bundle exec rake rubocop'
-        }
+    }
+    stage('rake rubocop') {
+      steps {
+        sh 'bundle exec rake rubocop'
       }
     }
   }
