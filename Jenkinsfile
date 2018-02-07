@@ -23,7 +23,7 @@ pipeline {
     }
     stage('rake rubocop') {
       steps {
-        sh 'bundle exec rake rubocop'
+        sh 'bundle exec rake rubocop --auto-correct'
       }
     }
   }
