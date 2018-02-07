@@ -4,7 +4,8 @@ require 'json'
 environmentpath = ARGV[0]
 environment     = ARGV[1]
 
-r10k_deploy_file_path = File.join(environmentpath,
+r10k_deploy_file_path = File.join(
+    environmentpath,
     environment,
     '.r10k-deploy.json'
 )
