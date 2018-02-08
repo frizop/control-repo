@@ -16,12 +16,12 @@ PuppetLint::RakeTask.new(:lint) do |config|
     '80chars'
   ]
   config.ignore_paths = [
-    "bundle/**/*.pp",
-    "pkg/**/*.pp",
-    "spec/**/*.pp",
-    "tests/**/*.pp",
-    "types/**/*.pp",
-    "vendor/**/*.pp",
+    'bundle/**/*.pp',
+    'pkg/**/*.pp',
+    'spec/**/*.pp',
+    'tests/**/*.pp',
+    'types/**/*.pp',
+    'vendor/**/*.pp'
   ]
 end
 
