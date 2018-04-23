@@ -6,7 +6,9 @@ gem 'metadata-json-lint'
 gem 'puppet', puppetversion
 gem 'puppet-lint', '>= 1.0.0'
 gem 'puppetlabs_spec_helper', '>= 1.0.0'
+gem 'r10k'
 gem 'rspec-puppet'
+gem 'pry'
 gem 'semantic_puppet'
 
 # rspec must be v2 for ruby 1.8.7
