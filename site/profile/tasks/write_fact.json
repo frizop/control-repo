@@ -1,0 +1,14 @@
+{
+  "description": "Allows you to add a fact to a machine",
+  "input_method": "stdin",
+  "parameters": {
+    "key": {
+      "description": "Key to set on remote machine",
+      "type": "String[1]"
+    },
+    "value": {
+      "description": "Value of key to set on remote machine",
+      "type": "String[1]"
+    }
+  }
+}
