@@ -1,9 +1,9 @@
 forge 'http://forge.puppetlabs.com'
 
-mod 'puppetlabs-inifile', '2.0.0'
-mod 'binford2k-node_encrypt', '0.3.1'
-mod 'puppetlabs-puppet_authorization', '0.4.0'
-mod 'puppetlabs-stdlib', '4.22.0'
-mod 'puppetlabs-concat', '4.1.1'
-mod 'puppetlabs-hocon', '1.0.0'
-mod 'puppetlabs-puppet_agent'
+mod 'puppetlabs-inifile', :latest
+mod 'binford2k-node_encrypt', :latest
+mod 'puppetlabs-puppet_authorization', :latest
+mod 'puppetlabs-stdlib', :latest
+mod 'puppetlabs-concat', :latest
+mod 'puppetlabs-hocon', :latest
+mod 'puppetlabs-puppet_agent', :latest
