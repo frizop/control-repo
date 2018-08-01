@@ -8,5 +8,5 @@ mod 'puppetlabs-concat'
 mod 'puppetlabs-hocon'
 mod 'puppetlabs-puppet_agent'
 mod 'puppet_workflows',
-  :git => 'git@git.fap.me:puppet_workflows',
+  :git => 'git@git.fap.me:workflows',
   :branch => 'report'
